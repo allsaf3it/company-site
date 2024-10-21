@@ -1,0 +1,211 @@
+
+:root {
+	--c-blue-900: #081030;
+	--c-blue-800: #111b40;
+	--c-blue-700: #152148;
+	--c-blue-500: #1d7bdb;
+	--c-blue-300: #293359;
+	--c-blue-200: #4e5985;
+	--c-blue-100: #dfe8ff;
+	--c-green-400: #09D1D2;
+    --tb-primary-rgb: 67,142,255;
+}
+
+button, input, select, textarea {
+	font: inherit;
+}
+a {
+	color: inherit;
+}
+/* End basic CSS override */
+.price-section {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   gap: 1rem;
+}
+.flip-card {
+   flex: 1 1 21rem;
+   transition: 0.4s ease;
+}
+
+.price-table {
+	background: rgba(14, 14, 35, 0.44);
+	border-radius: 16px;
+	width: 100%;
+	padding: 32px;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 15px 45px 0 rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(var(--tb-primary-rgb))!important;
+	position: relative;
+}
+.price-table .price-table-head {
+    background: rgba(0, 136, 206, 0.29);
+    /* padding: 3rem 0; */
+    border-radius: 50rem;
+}
+details.feature {
+   color: #eee;
+}
+.price-table:after {
+	content: "";
+	display: block;
+	top: -3px;
+	left: -3px;
+	bottom: -3px;
+	right: -3px;
+	z-index: -1;
+	position: absolute;
+	border-radius: 16px;
+}
+.price-table .price {
+	font-size: 3rem;
+	line-height: 1;
+	font-weight: 700;
+	display: inline-flex;
+	align-self: center;
+	align-items: center;
+	gap: 4px;
+	position: relative;
+	color: #fff;
+}
+.price-table .price small {
+	font-size: 1.25rem;
+	font-weight: 400;
+	position: absolute;
+	left: -1.5ch;
+}
+.price-table .title {
+	font-size: 1.25rem;
+	font-weight: 600;
+	line-height: 1.25;
+	text-align: center;
+	margin-top: 16px;
+	color: #fff;
+}
+.price-table .description {
+	font-size: 1rem;
+	text-align: center;
+	margin-top: 4px;
+}
+.features {
+	margin-top: 32px;
+}
+.feature {
+	position: relative;
+}
+.feature + .feature {
+	margin-top: 16px;
+}
+.feature summary {
+	display: inline-flex;
+	align-items: center;
+	list-style: none;
+}
+.feature summary::-webkit-details-marker {
+	display: none;
+}
+.feature[open] summary:after {
+	content: "";
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	z-index: 50;
+}
+.feature[open] div {
+	animation: scale 0.15s ease;
+}
+.feature .checkmark {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: var(--c-green-400);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-right: 12px;
+}
+.feature .checkmark svg {
+	width: 18px;
+	height: 18px;
+	color: #fff;
+}
+.feature .question-icon {
+	display: flex;
+	align-items: center;
+	margin-left: 6px;
+	cursor: pointer;
+}
+.feature .answer {
+	padding: 12px;
+	background-color: var(--c-blue-800);
+	border-radius: 6px;
+	position: absolute;
+	top: -12px;
+	z-index: 100;
+	transform: translatey(-100%) translatex(-50%);
+	transform-origin: bottom center;
+	width: 80%;
+	left: 50%;
+	border: 1px solid var(--c-blue-300);
+	box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.1);
+}
+@keyframes scale {
+	0% {
+	   image-rendering: pixelated;
+		transform: translatey(-100%) translatex(-50%) scale(0);
+   }
+	100% {
+	   image-rendering: pixelated;
+		transform: translatey(-100%) translatex(-50%) scale(1);
+   }
+}
+/* Basic styling for the flip card container */
+.flip-card {
+   width: 100%;
+   height: 580px;
+   perspective: 1000px; /* Set the perspective for 3D effect */
+   }
+ 
+ /* Styling for the inner container */
+ .flip-card-inner {
+   width: 100%;
+   height: 100%;
+   transition: transform 0.5s; /* Add a smooth transition for the flip effect */
+   transform-style: preserve-3d; /* Preserve the 3D space */
+ }
+ 
+ /* Styling for the front of the card */
+ .flip-card-front,
+ .flip-card-back {
+   width: 100%;
+   height: 100%;
+   position: absolute;
+   backface-visibility: hidden; /* Hide the backface of the elements */
+   }
+ 
+ /* Styling for the front of the card */
+ .flip-card-front {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   }
+ 
+ /* Styling for the back of the card */
+ .flip-card-back {
+   transform: rotateY(180deg); /* Rotate the back of the card */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ /* Add hover effect for flipping */
+ .flip-card:hover .flip-card-inner {
+   transform: rotateY(180deg);
+ }
+ 

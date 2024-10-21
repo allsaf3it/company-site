@@ -1,0 +1,8 @@
+[02-Nov-2023 08:03:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gedv7i42iogn/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gedv7i42iogn/public_html/config/app.php on line 16
+[03-Feb-2024 18:56:53 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function env() in /home/gedv7i42iogn/public_html/config/app.php:16
+Stack trace:
+#0 {main}
+  thrown in /home/gedv7i42iogn/public_html/config/app.php on line 16
